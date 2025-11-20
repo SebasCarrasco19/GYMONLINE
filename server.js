@@ -4,7 +4,8 @@ const path = require("path");
 const sqlite3 = require("sqlite3").verbose();
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
+
 
 // middlewares
 app.use(express.json());
@@ -492,3 +493,4 @@ app.delete("/api/admin/horarios/:id", (req, res) => {
 app.listen(PORT, () => {
   console.log(`Servidor iniciado en http://localhost:${PORT}`);
 });
+
